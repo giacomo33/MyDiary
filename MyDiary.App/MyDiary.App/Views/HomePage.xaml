@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.App.HomePage">
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black" >
+            <Image Source="Forest.jpg" Aspect="AspectFill"></Image>
+            <StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand" Padding="30,0,30,0">
+                    <Image  Source="logo.png" WidthRequest="80" HorizontalOptions="Center" />
+                    <Label FontSize="50"  HorizontalTextAlignment="Center" Text="My Diary" TextColor="#EEE">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Montserrat" />
+                                <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
+                                <On Platform="Windows"  Value="Assets/Raleway-Bold.ttf#Raleway-Bold" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout>
+                        <Label LineBreakMode="WordWrap" WidthRequest="200"   FontSize="16"  HorizontalTextAlignment="Center" TextColor="#EEE" Text="When all is said and done, leading a good life is more important than keeping a good diary.">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Raleway-Bold" />
+                                    <On Platform="Android" Value="fonts/Raleway-Bold.ttf#Raleway-Bold" />
+                                    <On Platform="Windows"  Value="Assets/Raleway-Bold.ttf#Raleway-Bold" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Padding="0,0,0,30">
+                    <Label x:Name="SignInLabel"   FontSize="20" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SIGN IN">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Montserrat" />
+                                <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
+                                <On Platform="Windows"  Value="Assets/Raleway-Bold.ttf#Raleway-Bold" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="SignInButton" AutomationId="SignInButton" Command="{Binding SignInButtonCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.App.Views.AboutPage"
+              Title="About this Application"
+            >
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Black">
+     
+            <StackLayout>
+                <Label Margin="20,25" FontSize="20" 
+               Text="Xamarin Forms app showcasing an Azure app service with Azure SQL Backend. Authentication goes though Azure using a server flow model with thirdparty authentication providors that include Facebook, Google, Twitter, Azure AD and Microsoft. " TextColor="White"
+               LineBreakMode="WordWrap"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Margin="20,25" FontSize="20" 
+               Text="The Azure app service is built using ASP.NET MVC with Entity Framework."  TextColor="White"
+               LineBreakMode="WordWrap"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Margin="20,25" FontSize="20" 
+               Text="ReactiveUI is used throughout the code to illustrate the power of an Observer based pattern approach. Specific Views such as the Search Page are coded using ReactiveUI."  TextColor="White"
+               LineBreakMode="WordWrap"/>
+            </StackLayout>
+
+        </StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

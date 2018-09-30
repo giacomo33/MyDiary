@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="MyDiary.App.Views.DiaryListPage"
+			 IsBusy="{Binding IsBusy}"
+						 Title="My Private Thoughts"
+					>
+
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+	</ContentPage.Padding>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="new_entry.png" Text="Add" Command="{Binding AddEntry}" />
+        <ToolbarItem Icon="sync.png" Text="Sync all Entries" Command="{Binding SyncEntries}" />
+     
+
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ListView x:Name="listView" 
+               CachingStrategy="RecycleElement"
+              ItemsSource="{Binding Entries}" 
+              SelectedItem="{Binding SelectedEntry,Mode=TwoWay}" 
+				  HasUnevenRows="True"
+              RowHeight="150"
+              IsPullToRefreshEnabled="True"
+              RefreshCommand="{Binding LoadItemsCommand}"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                           AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1">
+          
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0"
+                           Spacing="4"
+                           VerticalOptions="Center">
+                                <Label Text="{Binding ShortTitle}" FontSize="Medium" LineBreakMode="WordWrap"/>
+                                <Label Text="{Binding CreatedOn , StringFormat='{0:dddd, MMMM dd, yyyy}'}" TextColor="#3498DB" FontSize="Small" LineBreakMode="NoWrap"/>
+                                <Label Text="{Binding Description}" FontSize="Small" LineBreakMode="WordWrap"/>
+                            </StackLayout>
+
+                     
+
+                        </Grid>
+                    </ViewCell>
+                    <!--<TextCell Text="{Binding Title}" Detail="{Binding Description}">
+					<TextCell.ContextActions>
+						<MenuItem Command="{Binding BindingContext.DeleteEntry, Source={x:Reference MainPage}}" 
+											CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+					</TextCell.ContextActions>
+				</TextCell>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout IsVisible="{Binding IsBusy}" BackgroundColor="#80000000" Padding="12"
+                                  AbsoluteLayout.LayoutFlags="PositionProportional"
+                                  AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="White">
+            </ActivityIndicator>
+            <Label Text="Loading Diary Entries..." HorizontalOptions="Center" />
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.App.LoginPage"
+              Title="Sign In">
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black" >
+            <Image Source="Forest.jpg" Aspect="AspectFill"></Image>
+            <StackLayout>
+                <Label Text="Welcome to My Diary."
+                   FontSize="Medium" TextColor="White"
+                
+                HorizontalOptions="CenterAndExpand" />
+
+                <Label Text="Sign in with an option below:"
+                   FontSize="Small" TextColor="White"
+                
+                HorizontalOptions="CenterAndExpand" />
+
+
+                <Grid RowSpacing="20" 
+                HorizontalOptions="CenterAndExpand"
+                  VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="facebook" Source="facebook.png" Grid.Column="0" Grid.Row="0" HeightRequest="70"/>
+                    <Button Text="Sign In with Facebook" Command="{Binding OpenFaceBookAuth}"  Grid.Column="1" Grid.Row="0"  IsEnabled="{Binding IsNotBusy}" BackgroundColor="#70000000" TextColor="#EEE"/>
+
+                    <Image x:Name="google" Source="googleplus.png"  Grid.Column="0" Grid.Row="1" HeightRequest="70"/>
+                    <Button Text="Sign In with Google" Command="{Binding OpenGoogleAuth}"  Grid.Column="1" Grid.Row="1"  IsEnabled="{Binding IsNotBusy}" BackgroundColor="#70000000" TextColor="#EEE"/>
+
+                    <Image x:Name="twitter" Source="twitter.png" Grid.Column="0" Grid.Row="2" HeightRequest="70"/>
+                    <Button Text="Sign In with Twitter" Command="{Binding OpenTwitterAuth}" Grid.Column="1" Grid.Row="2"  IsEnabled="{Binding IsNotBusy}" BackgroundColor="#70000000" TextColor="#EEE"/>
+
+                    <Image x:Name="mc" Source="ms.png" Grid.Column="0" Grid.Row="3" HeightRequest="70"/>
+                    <Button Text="Sign In with Microsoft" Command="{Binding OpenMSAuth}" Grid.Column="1" Grid.Row="3" IsEnabled="{Binding IsNotBusy}" BackgroundColor="#70000000" TextColor="#EEE"/>
+
+                </Grid>
+
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsBusy}" BackgroundColor="#70000000" Padding="12" 
+                                  VerticalOptions="EndAndExpand">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="White">
+                </ActivityIndicator>
+                <Label Text="Signing in..." HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

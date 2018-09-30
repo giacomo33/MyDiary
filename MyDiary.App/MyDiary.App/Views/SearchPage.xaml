@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.App.Views.SearchPage"
+              Title="Searching Diary Entries"
+            >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Label Margin="0,25" FontSize="20" 
+               Text="Search your Diary Entries..." Style="{DynamicResource SubtitleStyle}"
+               LineBreakMode="WordWrap"/>
+
+                <Entry x:Name="textEntry" Placeholder="Enter Search Terms"/>
+                <Button x:Name="search" Text="Search"></Button>
+
+            <ListView x:Name="searchResults"
+                      VerticalOptions="StartAndExpand"
+                      HasUnevenRows="True"
+                      CachingStrategy="RecycleElement"
+           >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0"
+                                   Grid.Row="0"
+                                   Text="{Binding ShortTitle}" FontSize="Medium" LineBreakMode="WordWrap"/>
+                                <Label Grid.Column="0"
+                                   Grid.Row="1" Text="{Binding CreatedOn, StringFormat='{0:dddd, MMMM dd, yyyy}'}" TextColor="#3498DB" FontSize="Small" LineBreakMode="NoWrap"/>
+                                <Label Grid.Column="0"
+                                   Grid.Row="2" Text="{Binding Description}" FontSize="Small" LineBreakMode="WordWrap"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout x:Name="activityIndicatorStack" IsVisible="{Binding IsBusy}" BackgroundColor="#80000000" Padding="12"
+                                  >
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding IsBusy}" Color ="White">
+            </ActivityIndicator>
+            <Label Text="Searching Diary Entries..." HorizontalOptions="Center" />
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
