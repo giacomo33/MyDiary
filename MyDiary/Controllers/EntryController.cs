@@ -16,12 +16,6 @@ namespace MyDiary.Controllers
     [Authorize]
     public class EntryController : BaseController<Entry, MobileServiceContext>
     {
-        //protected override void Initialize(HttpControllerContext controllerContext)
-        //{
-        //    base.Initialize(controllerContext);
-        //    MobileServiceContext context = new MobileServiceContext();
-        //    DomainManager = new EntityDomainManager<Entry>(context, Request, enableSoftDelete: true);
-        //}
 
         // GET tables/Entry
         public IQueryable<Entry> GetAllDiaryEntries()

@@ -211,6 +211,7 @@
     <Content Include="ConnectionStrings.config" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\MyDiary20180823123632 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\MyDiary20180823123632 - Web Deploy1.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808230419599_initial.resx">

@@ -12,15 +12,9 @@ using MyDiary.Models;
 namespace MyDiary.Controllers
 {
     [Authorize]
-    public class UserController : TableController<User>
+    public class UserController :   BaseController<User, MobileServiceContext>
     {
-        protected override void Initialize(HttpControllerContext controllerContext)
-        {
-            base.Initialize(controllerContext);
-            MobileServiceContext context = new MobileServiceContext();
-            DomainManager = new EntityDomainManager<User>(context, Request);
-        }
-
+        
         //Save UserInformation
         //GET tables/user
         [Route("api/user/SaveUserInformation")]
