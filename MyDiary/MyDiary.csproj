@@ -208,6 +208,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConnectionStrings.config" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\MyDiary20180823123632 - Web Deploy.pubxml" />
   </ItemGroup>
