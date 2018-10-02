@@ -19,8 +19,7 @@
 
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td colspan="2"><img src="/Screenshots/uwp diaryList.png"  width="600" height="400" /></td>
 </tr>
 </tbody>
 </table>
