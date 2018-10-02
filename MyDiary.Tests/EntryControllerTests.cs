@@ -74,7 +74,7 @@ namespace MyDiary.Tests
                 );
 
             //act
-            var result = controller.GetUserId;
+            var result = controller.GetUserId();
 
             //assert
             Assert.NotNull(result);
@@ -91,7 +91,7 @@ namespace MyDiary.Tests
                 );
 
             //act
-            var result = controller.GetUserId;
+            var result = controller.GetUserId();
 
             //assert
             Assert.Null(result);
@@ -106,7 +106,7 @@ namespace MyDiary.Tests
             //act
             var ex = Assert.Throws<HttpResponseException>(() =>
               {
-                  var result = controller.GetUserId;
+                  var result = controller.GetUserId();
               }
             );
 

@@ -6,12 +6,10 @@
     Icon="{Binding Icon}">
     
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Black">
+        <StackLayout VerticalOptions="FillAndExpand">
             <ListView 
-                CachingStrategy="RecycleElement"
                 SeparatorColor="Transparent"
                 HasUnevenRows="True"
-                BackgroundColor="Black"
                 x:Name="ListViewMenu">
                 <ListView.Header>
                     <Grid>
@@ -46,7 +44,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Image Source="{Binding Icon}" HeightRequest="25" WidthRequest="25"/>
-                                <Label Grid.Column="1" Text="{Binding Title}" FontSize="24" TextColor="White"/>
+                                <Label Grid.Column="1" Text="{Binding Title}" FontSize="24"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

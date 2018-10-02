@@ -14,20 +14,28 @@ using MyDiary.Models;
 namespace MyDiary.Controllers
 {
     [Authorize]
-    public class EntryController : BaseController<Entry, MobileServiceContext>
+    public class EntryController : TableController<Entry>
     {
+        protected override void Initialize(HttpControllerContext controllerContext)
+        {
+            base.Initialize(controllerContext);
+            MobileServiceContext context = new MobileServiceContext();
+            DomainManager = new EntityDomainManager<Entry>(context, Request, enableSoftDelete: true);
+        }
 
         // GET tables/Entry
         public IQueryable<Entry> GetAllDiaryEntries()
         {
-            string userId = GetUserId;
-            return Query().Where(e => e.UserId == userId);
+            string userId = GetUserId();
+            return Query()
+                .Where(e => e.UserId == userId)
+                .OrderByDescending(e => e.CreatedAt);
         }
 
         // GET tables/Entry/48D68C86-6EA6-4C25-AA33-223FC9A27959
         public Task<Entry> GetDiaryEntry(string id)
         {
-            string userId = GetUserId;
+            string userId = GetUserId();
             return Query().SingleOrDefaultAsync(e => e.UserId == userId && e.Id == id);
         }
 
@@ -42,7 +50,7 @@ namespace MyDiary.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> InsertDiaryEntry(Entry item)
         {
-            string userId = GetUserId;
+            string userId = GetUserId();
             if (userId != item.UserId)
                 return this.Unauthorized();
 
@@ -56,17 +64,16 @@ namespace MyDiary.Controllers
         {
             var item = Lookup(id);
             var diaryEntry = item.Queryable.SingleOrDefault();
-            if (diaryEntry?.UserId == GetUserId)
+            if (diaryEntry?.UserId == GetUserId())
                 return DeleteAsync(id);
 
             throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.BadRequest, ReasonPhrase = "Id does not exist!" });
     }
 
         //Get UserId method.
-       public string GetUserId
+        [NonAction]
+        public string GetUserId()
         {
-            get
-            {
                 if (User == null)
                 {
                     throw new HttpResponseException(HttpStatusCode.Unauthorized);
@@ -75,7 +82,6 @@ namespace MyDiary.Controllers
                 Claim nameClaim = user?.FindFirst(
                     c => c.Type == ClaimTypes.NameIdentifier);
                 return nameClaim?.Value;
-            }
         }
     }
 }

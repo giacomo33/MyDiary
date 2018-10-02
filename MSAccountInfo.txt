@@ -11,3 +11,7 @@ google
 
 
 mMghuZKF5vf-8a9IiETS3VF_
+
+azure:
+
+userName="$MyDiary20180823123632" userPWD="EBfG9mMsJPx4vFWLCDSMnrsrg9ERunvcNqlkrxXXn9Br8AsXNv6fb1g1g34R"
