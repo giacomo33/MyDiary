@@ -7,7 +7,7 @@
 <table style="width: 100%;">
 <tbody>
 <tr>
-<td><img src="/Screenshots/android home.png" alt="" /></td>
+<td><img src="/Screenshots/android home.png" width="300" height="534" /></td>
 <td><img src="https://html-online.com/editor/Screenshots/android menu.png" alt="" /></td>
 </tr>
 <tr>
