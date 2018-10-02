@@ -58,7 +58,7 @@ namespace MyDiary.Controllers
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-        // DELETE tables/Entry/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        // DELETE tables/Entry
         [HttpDelete]
         public Task DeleteDiaryEntry(string id)
         {
