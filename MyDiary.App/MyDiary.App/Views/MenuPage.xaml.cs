@@ -46,7 +46,7 @@ namespace MyDiary.App.Views
                 ListViewMenu.ItemsSource = menuItems = new List<MasterDetailMenuItem>
                 {
                     new MasterDetailMenuItem { Title = "About", MenuType = MenuType.About, Icon ="about.png" },
-                    new MasterDetailMenuItem { Title = "My Diary", MenuType = MenuType.Diary, Icon = "logo.png" },
+                    new MasterDetailMenuItem { Title = "My Diary Entries", MenuType = MenuType.Diary, Icon = "logo.png", },
                       new MasterDetailMenuItem { Title = "Search Diary Entries", MenuType = MenuType.Search, Icon = "search.png" },
                     new MasterDetailMenuItem { Title = "My Profile", MenuType = MenuType.MyProfile, Icon = "userInfo.png" },
                     new MasterDetailMenuItem { Title = "Logout", MenuType = MenuType.LogOut, Icon = "logout.png" },
@@ -57,7 +57,7 @@ namespace MyDiary.App.Views
                 ListViewMenu.ItemsSource = menuItems = new List<MasterDetailMenuItem>
                 {
                     new MasterDetailMenuItem { Title = "About", MenuType = MenuType.About, Icon ="about.png" },
-                    new MasterDetailMenuItem { Title = "My Diary", MenuType = MenuType.Diary, Icon = "logo.png" },
+                    new MasterDetailMenuItem { Title = "My Diary Entries", MenuType = MenuType.Diary, Icon = "logo.png" },
                       new MasterDetailMenuItem { Title = "Search Diary Entries", MenuType = MenuType.Search, Icon = "search.png" },
                     new MasterDetailMenuItem { Title = "My Profile", MenuType = MenuType.MyProfile, Icon = "userInfo.png" },
                 };
