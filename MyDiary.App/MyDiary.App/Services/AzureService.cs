@@ -78,7 +78,7 @@ namespace MyDiary.App.Services
                 userTable = azureClient.GetSyncTable<User>();
 
                 //Clean out local table
-                //await entriesTable.PurgeAsync(true);
+                await userTable.PurgeAsync(true);
             }
             catch (Exception ex)
             {
@@ -208,13 +208,13 @@ namespace MyDiary.App.Services
                     }
                     newUser.AuthenticationProvidor = App.AuthenticatorProvidor.ToString();
                 }
+                await InitializeAsync();
                 await userTable.InsertAsync(newUser);
             }
             catch (Exception ex)
             {
                 throw;
             }
-            await InitializeAsync();
             await SynchronizeEntriesAsync();
            
         }

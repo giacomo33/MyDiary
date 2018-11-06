@@ -8,7 +8,7 @@
             <Image Source="Forest.jpg" Aspect="AspectFill"></Image>
             <StackLayout>
                 <StackLayout VerticalOptions="CenterAndExpand" Padding="30,0,30,0">
-                    <Image  Source="logo.png" WidthRequest="80" HorizontalOptions="Center" />
+                    <Image  Source="logo_white.png" WidthRequest="80" HorizontalOptions="Center" />
                     <Label FontSize="50"  HorizontalTextAlignment="Center" Text="My Diary" TextColor="#EEE">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">

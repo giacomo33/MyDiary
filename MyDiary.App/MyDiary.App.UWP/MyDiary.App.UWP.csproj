@@ -146,6 +146,7 @@
     <Content Include="logo.png" />
     <Content Include="logoff.png" />
     <Content Include="logout.png" />
+    <Content Include="logo_white.png" />
     <Content Include="menu.png" />
     <Content Include="ms.png" />
     <Content Include="msSignIn.png" />

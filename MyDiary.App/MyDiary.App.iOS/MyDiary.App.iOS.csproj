@@ -304,9 +304,6 @@
     <BundleResource Include="Resources\refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\about.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\userInfo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -329,5 +326,35 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Search%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Search%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userInfo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userInfo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slideout%402x.png" />
   </ItemGroup>
 </Project>
